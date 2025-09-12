@@ -1,0 +1,53 @@
+[Constructor] [2025-09-10 19:00:52] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-10 19:00:53] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-10 19:04:01] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-10 19:04:01] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:38:30] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:38:30] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:38:30] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:38:30] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:38:49] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:38:49] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:38:49] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:38:49] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:51:56] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:51:56] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 09:51:56] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 09:51:56] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:35:07] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:35:07] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:35:07] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:35:07] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:46:08] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:46:08] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:46:08] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:46:08] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:46:08] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:46:08] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:46:43] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:46:43] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:46:43] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:46:43] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:46:43] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:46:43] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:49:16] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:49:16] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:49:16] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:49:16] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:49:16] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:49:16] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:50:00] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:50:00] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:50:00] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:50:00] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:50:00] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:51:59] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:51:59] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:51:59] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-11 10:51:59] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-11 10:51:59] <UIButton> шрифт не был загружен
+[Log] [2025-09-11 10:51:59] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-12 15:01:53] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-12 15:01:53] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-12 15:01:53] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-12 15:01:53] <UIButton> конструктор был создан - переменные успешно инициализированы
