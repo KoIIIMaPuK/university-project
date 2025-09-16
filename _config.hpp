@@ -50,7 +50,7 @@ namespace config_window
 	*/
 	constexpr unsigned int WINDOW_WIDTH = 400;		// window width
 	constexpr unsigned int WINDOW_HEIGHT = 600;		// window height
-	constexpr const char* WINDOW_TITLE = "SFML Project University Calculator";	// window title
+	constexpr const char* WINDOW_TITLE = "SFML Project University";	// window title
 
 	/** 
 	*	@brief Exit codes for the application.

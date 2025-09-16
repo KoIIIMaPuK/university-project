@@ -51,3 +51,7 @@
 [Log] [2025-09-12 15:01:53] <UIButton> конструктор был создан - переменные успешно инициализированы
 [Constructor] [2025-09-12 15:01:53] ULogMaganer class constructor created -> DEFAULT
 [Log] [2025-09-12 15:01:53] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-16 12:30:42] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-16 12:30:42] <UIButton> конструктор был создан - переменные успешно инициализированы
+[Constructor] [2025-09-16 12:30:42] ULogMaganer class constructor created -> DEFAULT
+[Log] [2025-09-16 12:30:42] <UIButton> конструктор был создан - переменные успешно инициализированы

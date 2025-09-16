@@ -5,7 +5,7 @@
 //                  Include My libs
 // 
 // #########################################################
-#include "cfg_config.hpp"
+#include "_config.hpp"
 #include "utl_logger.hpp"
 
 
@@ -26,7 +26,9 @@ class UIButton
 protected:
     sf::RectangleShape shape;   // для хранения формы кнопки
     sf::Vector2f position;      // для хранения позиции кнопки
+    sf::Texture texture;        // для хранения текстуры кнопки
     sf::Vector2f size;          // для хранения размеров кнопки
+    sf::Sprite sprite;          // для хранения спрайта кнопки
     sf::Color color;            // для хранения цвета кнопки в формате RGB
     sf::Text label;             // для текста на кнопке
     sf::Font font;              // для шрифта
