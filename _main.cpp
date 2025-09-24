@@ -3,9 +3,9 @@
 //                  Include My libs
 // 
 // #########################################################
-#include "_config.hpp"
-#include "utl_logger.hpp"
-#include "ui_object.hpp"
+#include "_config.hpp"      // файл с конфигами
+#include "utl_logger.hpp"   // файл для логгирования
+#include "ui_button.hpp"    // файл для работы с кнопками
 
 
 
@@ -37,9 +37,7 @@ int main()
     *   [ 3 ] @param:   config_window::WINDOW_TITLE  - название окна окна
     */
     sf::RenderWindow window(sf::VideoMode(config_window::WINDOW_WIDTH, config_window::WINDOW_HEIGHT), config_window::WINDOW_TITLE);
-
-    UIButton objectButton0;
-    UIButton objectButton1(sf::Vector2f(150.f, 150.f), sf::Vector2f(0.f, 60.f));
+    window.setFramerateLimit(60);
 
     // -----------------------------------------------------
     //
@@ -57,15 +55,17 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
+            if (event.type == sf::Event::Resized) 
+            {
+                sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+                window.setView(sf::View(visibleArea));
+            }
         }
 
-        
-
         window.clear(sf::Color::Black);
-
-        objectButton0.draw(window);
-        objectButton1.draw(window);
 
         window.display();
     }
@@ -74,11 +74,9 @@ int main()
 }
 ////////////////////////////////////////////////////////////////////
 /// Код писал под:
-///     1. Kill Eva, Encassator - Psycho Dreams ( SWEEQTY x yungalligator hardstyle remix ):    https://youtu.be/WTQ5tLGFIm4
-///     2. Liza Evans - Ревную ( SWEEQTY hardstyle edit ):      https://youtu.be/Qmezd5yTGRQ
-///     3. DVRST, polnalyubvi - Falling Stars (Lyrics video):   https://youtu.be/r-z3mVtXa-Q
-///     4. DVRST, Leah Julia - Across The Sky (Lyrics Video):   https://youtu.be/UJQZNJr7Ppg
-///     5. Скриптонит, Райда - Baby mama[Official Audio]:       https://youtu.be/eXLSBdxm_cs
+///     1. DVRST, polnalyubvi - Falling Stars (Lyrics video):   https://youtu.be/r-z3mVtXa-Q
+///     2. DVRST, Leah Julia - Across The Sky (Lyrics Video):   https://youtu.be/UJQZNJr7Ppg
+///     3. Скриптонит, Райда - Baby mama[Official Audio]:       https://youtu.be/eXLSBdxm_cs
 ////////////////////////////////////////////////////////////////////
 
 
