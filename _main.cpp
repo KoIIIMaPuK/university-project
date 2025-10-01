@@ -25,17 +25,17 @@
 // ---------------------------------------------------------
 int main()
 {
-    /**
-    *   @brief:         объект SFML-класса. 
-    *   
-    ****************************
-    *   @description:   создается окно, на данный момент
-    *                   является основным окном программы.
-    * 
-    *   [ 1 ] @param:   config_window::WINDOW_WIDTH  - ширина окна
-    *   [ 2 ] @param:   config_window::WINDOW_HEIGHT - высота окна
-    *   [ 3 ] @param:   config_window::WINDOW_TITLE  - название окна окна
-    */
+    /** ****************************************************
+        *   @brief:         объект SFML-класса. 
+        *   
+        ****************************
+        *   @description:   создается окно, на данный момент
+        *                   является основным окном программы.
+        * 
+        *   [ 1 ] @param:   config_window::WINDOW_WIDTH  - ширина окна
+        *   [ 2 ] @param:   config_window::WINDOW_HEIGHT - высота окна
+        *   [ 3 ] @param:   config_window::WINDOW_TITLE  - название окна окна
+        */
     sf::RenderWindow window(sf::VideoMode(config_window::WINDOW_WIDTH, config_window::WINDOW_HEIGHT), config_window::WINDOW_TITLE);
     window.setFramerateLimit(60);
 

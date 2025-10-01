@@ -6,12 +6,12 @@ namespace ninotchka
     namespace logger 
     {
         /** ****************************************************
-    *
-    * @brief:			дефолтный конструктор класса
-    *
-    * ***************************
-    * @description:	    базовый конструктор класса.
-    */
+            *
+            * @brief:			дефолтный конструктор класса
+            *
+            * ***************************
+            * @description:	    базовый конструктор класса.
+            */
         ULogManager::ULogManager() : objectFileULogManager(config_logger::FILE_TXT_PATH, std::ios::app) {
             if (!objectFileULogManager.is_open()) {
                 std::cerr << "[Error] Failed to open file! -> ULogManager class constructor -> DEFAULT" << std::endl;
