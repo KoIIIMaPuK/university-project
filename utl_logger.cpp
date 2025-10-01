@@ -3,7 +3,7 @@
 
 namespace ninotchka
 {
-    namespace utils 
+    namespace logger 
     {
         /** ****************************************************
     *
