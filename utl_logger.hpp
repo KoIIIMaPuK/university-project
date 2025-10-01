@@ -11,6 +11,16 @@ namespace ninotchka
 {
     namespace logger 
     {
+        // ---------------------------------------------------------
+        //
+        // @brief:          class ULogManager
+        //
+        // --------------------------- 
+        // @description:    класс для работы с логгами.
+        // 
+        // [ 1 ] field:     std::fstream objectFileULogManager;     -   для хранения файла логгирования
+        // [ 2 ] field:     std::string nameLog;                    -   для хранения названия лога
+        // ---------------------------------------------------------
         class ULogManager {
         private:
             std::fstream objectFileULogManager;

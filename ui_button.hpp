@@ -9,20 +9,20 @@
 #include "utl_logger.hpp"
 
 
-// ---------------------------------------------------------
-//
-// @brief:          class UIButton
-//
-// --------------------------- 
-// @description:    класс для работы с кнопками.
-// 
-// [ 1 ] field:     sf::RectangleShape shape    -   для хранения формы кнопки
-// [ 2 ] field:     sf::Vector2f position;      -   для хранения позиции кнопки
-// [ 3 ] field:     sf::Vector2f size;          -   для хранения размеров кнопки
-// [ 4 ] field:     sf::Color color;            -   для хранения цвета кнопки в формате RGB
-// ---------------------------------------------------------
 namespace ninotchka {
     namespace user_interface {
+        // ---------------------------------------------------------
+        //
+        // @brief:          class UIButton
+        //
+        // --------------------------- 
+        // @description:    класс для работы с кнопками.
+        // 
+        // [ 1 ] field:     sf::RectangleShape shape    -   для хранения формы кнопки
+        // [ 2 ] field:     sf::Vector2f position;      -   для хранения позиции кнопки
+        // [ 3 ] field:     sf::Vector2f size;          -   для хранения размеров кнопки
+        // [ 4 ] field:     sf::Color color;            -   для хранения цвета кнопки в формате RGB
+        // ---------------------------------------------------------
         class UIButton
         {
         protected:
