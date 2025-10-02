@@ -9,8 +9,10 @@
 #include "utl_logger.hpp"
 
 
-namespace ninotchka {
-    namespace user_interface {
+namespace ninotchka 
+{
+    namespace user_interface 
+    {
         // ---------------------------------------------------------
         //
         // @brief:          class UIButton

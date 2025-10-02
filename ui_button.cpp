@@ -1,7 +1,9 @@
 #include "ui_button.hpp"
 
-namespace ninotchka {
-	namespace user_interface {
+namespace ninotchka 
+{
+	namespace user_interface 
+	{
 		/** ****************************************************
 			*
 			* @brief:			дефолтный конструктор класса

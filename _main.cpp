@@ -9,8 +9,6 @@
 
 
 
-
-
 // ---------------------------------------------------------
 //
 // @brief:          Main func
@@ -39,6 +37,10 @@ int main()
     sf::RenderWindow window(sf::VideoMode(config_window::WINDOW_WIDTH, config_window::WINDOW_HEIGHT), config_window::WINDOW_TITLE);
     window.setFramerateLimit(60);
 
+    sf::RectangleShape background(sf::Vector2f(288, 576));
+    background.setPosition(sf::Vector2f(0, 0));
+    background.setFillColor(sf::Color(23, 0, 29));
+
     // -----------------------------------------------------
     //
     // @brief:          Main while 
@@ -65,7 +67,10 @@ int main()
             }
         }
 
-        window.clear(sf::Color::Black);
+        window.clear(sf::Color(39, 0, 34));
+
+        window.draw(background);
+        window.draw(ninotchka);
 
         window.display();
     }

@@ -48,8 +48,8 @@ namespace config_window
 	/**
 	*	@brief Configuration constants for the SFML window
 	*/
-	constexpr unsigned int WINDOW_WIDTH = 1080;		// window width
-	constexpr unsigned int WINDOW_HEIGHT = 512;		// window height
+	constexpr unsigned int WINDOW_WIDTH = 768;		// window width
+	constexpr unsigned int WINDOW_HEIGHT = 576;		// window height
 	constexpr const char* WINDOW_TITLE = "Ninotchka Hub";	// window title
 
 	/** 
