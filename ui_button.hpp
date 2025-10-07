@@ -9,9 +9,9 @@
 #include "utl_logger.hpp"
 
 
-namespace ninotchka 
+namespace ninotchka
 {
-    namespace user_interface 
+    namespace user_interface
     {
         // ---------------------------------------------------------
         //
@@ -65,6 +65,14 @@ namespace ninotchka
                 */
             UIButton(sf::Vector2f size, sf::Vector2f position, sf::Color color);
 
+            /** ****************************************************
+                *
+                * @brief:			конструктор класса
+                *
+                * ***************************
+                * @description:	    добавлена перегрузка размера, позиции и пути к текстуре.
+                */
+            UIButton(sf::Vector2f size, sf::Vector2f position, const std::string& texturePath);
 
             /** ****************************************************
                 *
@@ -124,6 +132,24 @@ namespace ninotchka
                 * @description:     инициализирует позицию
                 */
             void setPosition(sf::Vector2f& position);
+
+            /** ****************************************************
+                *
+                * @brief:           функция - сеттер
+                *
+                * ***************************
+                * @description:     инициализирует текстуру по пути к файлу
+                */
+            void setTexture(const std::string& texturePath);
+
+            /** ****************************************************
+                *
+                * @brief:           функция - сеттер
+                *
+                * ***************************
+                * @description:     инициализирует масштаб спрайта
+                */
+            void setScale(sf::Vector2f& scale);
         };
     }
 }

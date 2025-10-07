@@ -41,6 +41,63 @@ int main()
     background.setPosition(sf::Vector2f(0, 0));
     background.setFillColor(sf::Color(23, 0, 29));
 
+    
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+   //
+    sf::Texture texture_title;
+    if (!texture_title.loadFromFile("gfx-assets/_text-title-project-ninotchka-hub.png"));
+
+    sf::Sprite title(texture_title);
+    title.setPosition(sf::Vector2f(420.f, 150.f));
+    title.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    sf::Texture texture_ninotchka;
+    if (!texture_ninotchka.loadFromFile("gfx-assets/_first-version-ninotchka.png"));
+
+    sf::Sprite ninotchka(texture_ninotchka);
+    ninotchka.setPosition(sf::Vector2f(40.f, 0.f));
+    ninotchka.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    sf::Texture texture_calculator;
+    if (!texture_calculator.loadFromFile("gfx-assets/_blueprint-button-calculator.png"));
+
+    sf::Sprite button_calculator(texture_calculator);
+    button_calculator.setPosition(sf::Vector2f(420.f, 250.f));
+    button_calculator.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    sf::Texture texture_ninotchka_sketch;
+    if (!texture_ninotchka_sketch.loadFromFile("gfx-assets/_blueprint-button-ninotchka-sketchpad.png"));
+
+    sf::Sprite button_ninotchka_sketch(texture_ninotchka_sketch);
+    button_ninotchka_sketch.setPosition(sf::Vector2f(420.f, 300.f));
+    button_ninotchka_sketch.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    sf::Texture texture_game;
+    if (!texture_game.loadFromFile("gfx-assets/_blueprint-button-why-did-i-create-this.png"));
+
+    sf::Sprite button_game(texture_game);
+    button_game.setPosition(sf::Vector2f(420.f, 350.f));
+    button_game.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
     // -----------------------------------------------------
     //
     // @brief:          Main while 
@@ -71,6 +128,10 @@ int main()
 
         window.draw(background);
         window.draw(ninotchka);
+        window.draw(button_calculator);
+        window.draw(button_ninotchka_sketch);
+        window.draw(button_game);
+        window.draw(title);
 
         window.display();
     }

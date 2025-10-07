@@ -1,8 +1,8 @@
 #include "ui_button.hpp"
 
-namespace ninotchka 
+namespace ninotchka
 {
-	namespace user_interface 
+	namespace user_interface
 	{
 		/** ****************************************************
 			*
@@ -21,7 +21,7 @@ namespace ninotchka
 			this->shape.setPosition(this->position);	// инициализация позиции кнопки
 
 			/**
-			* @brief:	создание лога о создании объекта класса	
+			* @brief:	создание лога о создании объекта класса
 			*/
 			objectULogManager.addLogMessage(config_logger::text::USER_INTERFACE_BUTTON, config_logger::text::CONSTRUCTOR_DEFAULT_WAS_CREATED);
 		}
@@ -72,8 +72,49 @@ namespace ninotchka
 			position(position),
 			color(color)
 		{
-
 			this->shape.setSize(this->size);			// инициализация размеров кнопки 
+			this->shape.setFillColor(this->color);		// инициализация цвета кнопки
+			this->shape.setPosition(this->position);	// инициализация позиции кнопки
+
+			/**
+			*	@brief:		создание лога о создании объекта класса
+			*/
+			objectULogManager.addLogMessage(config_logger::text::USER_INTERFACE_BUTTON, config_logger::text::CONSTRUCTOR_DEFAULT_WAS_CREATED);
+		} 
+
+
+
+
+
+
+		   
+		/** ****************************************************
+			*
+			* @brief:			конструктор класса
+			*
+			* ***************************
+			* @description:	    добавлена перегрузка размера, позиции и пути к текстуре.
+			*/
+		UIButton::UIButton(sf::Vector2f size, sf::Vector2f position, const std::string& texturePath) :
+			size(size),
+			position(position),
+			color(sf::Color::Cyan)
+		{
+			if (!this->texture.loadFromFile(texturePath)) 
+			{
+				objectULogManager.addLogMessage(config_logger::text::USER_INTERFACE_BUTTON, "Failed to load texture from path: " + texturePath);
+			}
+			else 
+			{
+				this->sprite.setTexture(this->texture);
+				this->sprite.setPosition(this->position);
+				if (this->texture.getSize().x > 0 && this->texture.getSize().y > 0) 
+				{
+					this->sprite.setScale(this->size.x / this->texture.getSize().x, this->size.y / this->texture.getSize().y);
+				}
+			}
+
+			this->shape.setSize(this->size);			// инициализация размеров кнопки (на случай fallback)
 			this->shape.setFillColor(this->color);		// инициализация цвета кнопки
 			this->shape.setPosition(this->position);	// инициализация позиции кнопки
 
@@ -99,7 +140,12 @@ namespace ninotchka
 			*/
 		void UIButton::draw(sf::RenderWindow& window)
 		{
-			window.draw(this->shape);
+			if (this->sprite.getTexture() != nullptr) {
+				window.draw(this->sprite);
+			}
+			else {
+				window.draw(this->shape);
+			}
 		}
 
 
@@ -116,16 +162,22 @@ namespace ninotchka
 			* ***************************
 			* @description:     проверяет, находится ли
 			*                   курсор мыши над кнопкой
-			* 
+			*
 			* @return:			возвращает true, если
-			*					курсор мыши находится 
+			*					курсор мыши находится
 			*					над кнопкой
 			*/
 		bool UIButton::isMouseOver(sf::RenderWindow& window)
 		{
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 			sf::Vector2f mousePosF = window.mapPixelToCoords(mousePos);
-			sf::FloatRect bounds = shape.getGlobalBounds();
+			sf::FloatRect bounds;
+			if (this->sprite.getTexture() != nullptr) {
+				bounds = this->sprite.getGlobalBounds();
+			}
+			else {
+				bounds = this->shape.getGlobalBounds();
+			}
 			return bounds.contains(mousePosF);
 		}
 
@@ -195,6 +247,10 @@ namespace ninotchka
 		void UIButton::setSize(sf::Vector2f& size)
 		{
 			this->size = size;
+			this->shape.setSize(this->size);
+			if (this->texture.getSize().x > 0 && this->texture.getSize().y > 0) {
+				this->sprite.setScale(this->size.x / this->texture.getSize().x, this->size.y / this->texture.getSize().y);
+			}
 		}
 
 
@@ -214,6 +270,53 @@ namespace ninotchka
 		void UIButton::setPosition(sf::Vector2f& position)
 		{
 			this->position = position;
+			this->shape.setPosition(this->position);
+			this->sprite.setPosition(this->position);
+		}
+
+
+
+
+
+
+
+
+		/** ****************************************************
+			*
+			* @brief:           функция - сеттер
+			*
+			* ***************************
+			* @description:     инициализирует текстуру по пути к файлу
+			*/
+		void UIButton::setTexture(const std::string& texturePath)
+		{
+			if (!this->texture.loadFromFile(texturePath)) {
+				objectULogManager.addLogMessage(config_logger::text::USER_INTERFACE_BUTTON, "Failed to load texture from path: " + texturePath);
+				return;
+			}
+			this->sprite.setTexture(this->texture);
+			this->sprite.setPosition(this->position);
+			if (this->texture.getSize().x > 0 && this->texture.getSize().y > 0) {
+				this->sprite.setScale(this->size.x / this->texture.getSize().x, this->size.y / this->texture.getSize().y);
+			}
+		}
+
+
+
+
+
+
+
+		/** ****************************************************
+			*
+			* @brief:           функция - сеттер
+			*
+			* ***************************
+			* @description:     инициализирует масштаб спрайта
+			*/
+		void UIButton::setScale(sf::Vector2f& scale)
+		{
+			this->sprite.setScale(scale);
 		}
 	}
 }
