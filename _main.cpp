@@ -3,9 +3,9 @@
 //                  Include My libs
 // 
 // #########################################################
-#include "_config.hpp"          // файл с конфигами
-#include "ui_button.hpp"        // файл для работы с кнопками
-#include "utl_logger.hpp"       // файл для логгирования
+#include "_config.hpp"          // Р¤Р°Р№Р» СЃ РЅР°СЃС‚СЂРѕР№РєР°РјРё
+#include "ui_button.hpp"        // Р¤Р°Р№Р» РґР»СЏ РєРЅРѕРїРѕРє РІ РёРЅС‚РµСЂС„РµР№СЃРµ
+#include "utl_logger.hpp"       // Р¤Р°Р№Р» РґР»СЏ Р»РѕРіРёСЂРѕРІР°РЅРёСЏ
 
 
 
@@ -14,12 +14,12 @@
 
 // ---------------------------------------------------------
 //
-// @brief:          функция-парсер
+// @brief:          Р¤СѓРЅРєС†РёСЏ-РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ
 //
 // --------------------------- 
-// @description:    функция для парсинга вводимой строки калькулятора
+// @description:    Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ СЃС‚СЂРѕРєРё РІС‹СЂР°Р¶РµРЅРёР№
 // 
-// @return:         возвращает результат вычислений
+// @return:         Р’РѕР·РІСЂР°С‰Р°РµС‚ РІС‹С‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 //                      
 //                      config_window::application_exit_code::WINDOW_COMPLETE
 // ---------------------------------------------------------
@@ -38,13 +38,13 @@ double calculateResult(const std::string& expression) {
         temp.clear();
     }
 
-    // Читаем оператор
+    // РџРѕР»СѓС‡Р°РµРј РѕРїРµСЂР°С‚РѕСЂ
     if (i < expression.size()) {
         op = expression[i];
         i++;
     }
 
-    // Читаем второе число
+    // РџРѕР»СѓС‡Р°РµРј РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ
     while (i < expression.size() && (std::isdigit(expression[i]) || expression[i] == '.')) {
         temp += expression[i];
         i++;
@@ -53,7 +53,7 @@ double calculateResult(const std::string& expression) {
         num2 = std::stod(temp);
     }
 
-    // Выполняем операцию
+    // Р’С‹РїРѕР»РЅСЏРµРј РІС‹С‡РёСЃР»РµРЅРёРµ
     switch (op) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
@@ -77,25 +77,25 @@ double calculateResult(const std::string& expression) {
 // @brief:          Main func
 //
 // --------------------------- 
-// @description:    основная функция программы.
+// @description:    Р“Р»Р°РІРЅР°СЏ С„СѓРЅРєС†РёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ.
 // 
-// @return:         при успешном выполнении программы,
-//                  возвращает 0, он же:
+// @return:         РљРѕРґ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ,
+//                  РІРѕР·РІСЂР°С‰Р°РµС‚ 0, РµСЃР»Рё:
 //                      
 //                      config_window::application_exit_code::WINDOW_COMPLETE
 // ---------------------------------------------------------
 int main()
 {
     /** ****************************************************
-        *   @brief:         объект SFML-класса. 
-        *   
+        *   @brief:         РЎРѕР·РґР°РЅРёРµ SFML-РѕРєРЅР°.
+        *
         ****************************
-        *   @description:   создается окно, на данный момент
-        *                   является основным окном программы.
-        * 
-        *   [ 1 ] @param:   config_window::WINDOW_WIDTH  - ширина окна
-        *   [ 2 ] @param:   config_window::WINDOW_HEIGHT - высота окна
-        *   [ 3 ] @param:   config_window::WINDOW_TITLE  - название окна окна
+        *   @description:   РЎРѕР·РґР°РЅРёРµ РѕРєРЅР°, РІ РєРѕС‚РѕСЂРѕРј Р±СѓРґРµС‚
+        *                   РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ РІРµСЃСЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёР№ РёРЅС‚РµСЂС„РµР№СЃ.
+        *
+        *   [ 1 ] @param:   config_window::WINDOW_WIDTH  - С€РёСЂРёРЅР° РѕРєРЅР°
+        *   [ 2 ] @param:   config_window::WINDOW_HEIGHT - РІС‹СЃРѕС‚Р° РѕРєРЅР°
+        *   [ 3 ] @param:   config_window::WINDOW_TITLE  - РЅР°Р·РІР°РЅРёРµ РѕРєРЅР° РїСЂРёР»РѕР¶РµРЅРёСЏ
         */
     sf::RenderWindow window(sf::VideoMode(config_window::WINDOW_WIDTH, config_window::WINDOW_HEIGHT), config_window::WINDOW_TITLE);
     window.setFramerateLimit(60);
@@ -110,7 +110,7 @@ int main()
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
-    // @brief:      инициализация надписи
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С‚РµРєСЃС‚СѓСЂС‹
     // 
     // ---------------------------
     //
@@ -128,7 +128,7 @@ int main()
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
-    // @brief:      инициализация ниночки
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С‚РµРєСЃС‚СѓСЂС‹
     // 
     // ---------------------------
     //
@@ -140,31 +140,31 @@ int main()
     ninotchka.setScale(3.f, 3.f);
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-    
+
 
 
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
-    // @brief:      инициализация кнопок основого меню
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРЅРѕРїРѕРє РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
     // 
     // ---------------------------
     //
     ninotchka::user_interface::UIButton button_start_calculator(
-        sf::Vector2f(336.f, 48.f), 
-        sf::Vector2f(420.f, 250.f), 
+        sf::Vector2f(336.f, 48.f),
+        sf::Vector2f(420.f, 250.f),
         "gfx-assets/_blueprint-button-calculator.png"
     );
 
     ninotchka::user_interface::UIButton button_start_ninotchka_sketch(
-        sf::Vector2f(336.f, 48.f), 
-        sf::Vector2f(420.f, 300.f), 
+        sf::Vector2f(336.f, 48.f),
+        sf::Vector2f(420.f, 300.f),
         "gfx-assets/_blueprint-button-ninotchka-sketchpad.png"
     );
 
     ninotchka::user_interface::UIButton button_start_game(
-        sf::Vector2f(336.f, 48.f), 
-        sf::Vector2f(420.f, 350.f), 
+        sf::Vector2f(336.f, 48.f),
+        sf::Vector2f(420.f, 350.f),
         "gfx-assets/_blueprint-button-why-did-i-create-this.png"
     );
     //
@@ -173,30 +173,50 @@ int main()
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
-    // @brief:      инициализация текста калькулятора
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С‚РµРєСЃС‚Р° РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°
     // 
     // ---------------------------
     //
     sf::Font font;
-    if (!font.loadFromFile(config_window::fonts::FONT_MONOCRAFT)) // Загржаем шрифт
+    if (!font.loadFromFile(config_window::fonts::FONT_MONOCRAFT)) // Р—Р°РіСЂСѓР·РєР° С€СЂРёС„С‚Р°
     {
-        return config_window::application_exit_code::WINDOW_ERROR;      
+        return config_window::application_exit_code::WINDOW_ERROR;
     }
 
     sf::Text displayText;
     displayText.setFont(font);
-    displayText.setCharacterSize(24);               // Размер шрифта
-    displayText.setFillColor(sf::Color(255, 5, 70));     // Цвет текста
-    displayText.setPosition(20.f, 100.f);           // Позиция текста на экране (выше кнопок, например)
+    displayText.setCharacterSize(24);               // Р Р°Р·РјРµСЂ С‚РµРєСЃС‚Р°
+    displayText.setFillColor(sf::Color(255, 5, 70));     // Р¦РІРµС‚ С‚РµРєСЃС‚Р°
+    displayText.setPosition(15.f, 150.f);           // РџРѕР·РёС†РёСЏ С‚РµРєСЃС‚Р° РЅР° СЌРєСЂР°РЅРµ (РѕСЃСЊ X, РѕСЃСЊ Y)
 
-    std::string inputString;    // Строка калькулятора
+    std::string inputString;    // РЎС‚СЂРѕРєР° РІРІРѕРґР° РІС‹СЂР°Р¶РµРЅРёСЏ
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
-    // @brief:      инициализация кнопок калькулятора
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С‚РµРєСЃС‚СѓСЂС‹ СЂР°Р·РґРµР»РµРЅРёСЏ РёРЅС‚РµСЂС„РµР№СЃР° РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°
+    // 
+    // ---------------------------
+    //
+    sf::Texture texture;
+    if (!texture.loadFromFile("gfx-assets/_line-for-calculator.png"))
+    {
+        return config_window::application_exit_code::WINDOW_ERROR;
+    }
+    
+    sf::Sprite line_for_calculator;
+    line_for_calculator.setTexture(texture);
+    line_for_calculator.setPosition(sf::Vector2f(15.f, 175.f));
+    line_for_calculator.setScale(3.f, 3.f);
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //  
+    // @brief:      РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРЅРѕРїРѕРє РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°
     // 
     // ---------------------------
     //
@@ -324,9 +344,9 @@ int main()
     // @brief:          Main while 
     // 
     // ---------------------------
-    // @description:    основной цикл в котором происходит
-    //                  отслеживание событий и отрисовка
-    //                  графики в окне.
+    // @description:    Р“Р»Р°РІРЅС‹Р№ С†РёРєР» РѕР±СЂР°Р±РѕС‚РєРё СЃРѕР±С‹С‚РёР№
+    //                  РѕС‚СЂРёСЃРѕРІРєРё РёРЅС‚РµСЂС„РµР№СЃР° Рё РѕР±СЂР°Р±РѕС‚РєРё
+    //                  РІРІРѕРґР° РґР°РЅРЅС‹С… РІ РѕРєРЅРµ.
     //
     // -----------------------------------------------------
     while (window.isOpen())
@@ -338,7 +358,7 @@ int main()
             {
                 window.close();
             }
-            if (event.type == sf::Event::Resized) 
+            if (event.type == sf::Event::Resized)
             {
                 sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
                 window.setView(sf::View(visibleArea));
@@ -346,7 +366,7 @@ int main()
 
             // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
             //
-            // @brief:      Обработка нажатий на кнопки главного меню
+            // @brief:      РћР±СЂР°Р±РѕС‚РєР° РєР»РёРєРѕРІ РїРѕ РєРЅРѕРїРєР°Рј РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
             // 
             // ---------------------------
             //
@@ -364,13 +384,13 @@ int main()
             }
             //
             // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-            
+
 
 
 
             // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
             //
-            // @brief:      Обработка нажатий на кнопки калькулятора
+            // @brief:      РћР±СЂР°Р±РѕС‚РєР° РєР»РёРєРѕРІ РїРѕ РєРЅРѕРїРєР°Рј РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°
             // 
             // ---------------------------
             //
@@ -438,7 +458,7 @@ int main()
             }
             if (button_calculator_back.isLClicked(window, event)) {
                 if (!inputString.empty()) {
-                    inputString.pop_back(); // Удаляем последний символ
+                    inputString.pop_back(); // РЈРґР°Р»СЏРµРј РїРѕСЃР»РµРґРЅРёР№ СЃРёРјРІРѕР»
                 }
             }
             if (button_calculator_menu.isLClicked(window, event)) {
@@ -458,6 +478,7 @@ int main()
 
             window.draw(background);
             window.draw(displayText);
+            window.draw(line_for_calculator);
             button_calculator_0.draw(window);
             button_calculator_1.draw(window);
             button_calculator_2.draw(window);
@@ -477,7 +498,7 @@ int main()
             button_calculator_equal.draw(window);
             button_calculator_clear.draw(window);
             button_calculator_back.draw(window);
-            
+
             window.display();
         }
         else
@@ -499,13 +520,13 @@ int main()
 
     }
 
-    return config_window::application_exit_code::WINDOW_COMPLETE;   // Конец :D https://www.youtube.com/watch?v=6EXB2Of1zLY
+    return config_window::application_exit_code::WINDOW_COMPLETE;   // РџРѕРєР° :D https://www.youtube.com/watch?v=6EXB2Of1zLY
 }
 ////////////////////////////////////////////////////////////////////
-/// Код писал под:
+/// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ:
 ///     1. DVRST, polnalyubvi - Falling Stars (Lyrics video):   https://youtu.be/r-z3mVtXa-Q
 ///     2. DVRST, Leah Julia - Across The Sky (Lyrics Video):   https://youtu.be/UJQZNJr7Ppg
-///     3. Скриптонит, Райда - Baby mama[Official Audio]:       https://youtu.be/eXLSBdxm_cs
+///     3. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ - Baby mama[Official Audio]:       https://youtu.be/eXLSBdxm_cs
 ////////////////////////////////////////////////////////////////////
 
 
@@ -515,7 +536,7 @@ int main()
 
 ////////////////////////////////////////////////////////////////////
 // 
-//      идеи
+//      пїЅпїЅпїЅпїЅ
 // 
 ////////////////////////////////////////////////////////////////////
 //
@@ -548,7 +569,7 @@ int main()
 
 ////////////////////////////////////////////////////////////////////
 // 
-//      код в качестве наработак + сохраненки
+//      пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ + пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 // 
 ////////////////////////////////////////////////////////////////////
 //
