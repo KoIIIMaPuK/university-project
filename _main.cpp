@@ -102,9 +102,19 @@ int main()
 
     bool isOpenWindowTest = false;
 
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //  
+    // @brief:      Инициализация заднего фона
+    // 
+    // ---------------------------
+    //
     sf::RectangleShape background(sf::Vector2f(288, 576));
     background.setPosition(sf::Vector2f(0, 0));
     background.setFillColor(sf::Color(23, 0, 29));
+    //
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    
 
 
 
@@ -598,4 +608,24 @@ int main()
 ///
 ///     return cfgwnd::appexcd::WINDOW_COMPLETE;
 /// }
+////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////
+// 
+//      наработки по парсингу мосбиржы
+// 
+////////////////////////////////////////////////////////////////////
+/*
+sf::Http http("https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER.json");
+sf::Http::Request request;
+request.setMethod(sf::Http::Request::Get);
+
+sf::Http::Response response = http.sendRequest(request);
+std::cout << "status: " << response.getStatus() << std::endl;
+std::cout << "HTTP version: " << response.getMajorHttpVersion() << "." << response.getMinorHttpVersion() << std::endl;
+std::cout << "Content-Type header:" << response.getField("Content-Type") << std::endl;
+std::cout << "body: " << response.getBody() << std::endl;
+*/
 ////////////////////////////////////////////////////////////////////
