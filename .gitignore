@@ -1,0 +1,39 @@
+# Visual Studio
+*.suo
+*.user
+*.sln
+*.sln.docstates
+*.sln.cache
+*.sdf
+*.opensdf
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+bin/
+obj/
+Debug/
+Release/
+x64/
+.vs/
+ipch/
+*.log
+*.tlog
+*.lastcodeanalysissucceeded
+*.VC.db
+
+
+# Скомпилированные файлы и библиотеки
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+
+# Временные файлы и резервные копии
+*~
+*.bak
+*.tmp
+
+# Локальные настройки
+settings.json
