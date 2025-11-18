@@ -5,11 +5,11 @@
 //                  Include SFML libs
 // 
 // #########################################################
-#include <SFML/Graphics.hpp>    // ???????
-#include <SFML/Network.hpp>     // ????
-#include <SFML/System.hpp>      // ????????? ???????
-#include <SFML/Window.hpp>      // ???? ? ????
-#include <SFML/Audio.hpp>       // ?????
+#include <SFML/Graphics.hpp>   
+#include <SFML/Network.hpp>     
+#include <SFML/System.hpp>      
+#include <SFML/Window.hpp>     
+#include <SFML/Audio.hpp>       
 
 
 
@@ -37,7 +37,7 @@
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 // 
 // @brief:			Namespace config window <config_window>
-// z
+// 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+
 // @description:	пространство имен с конфигурацией
 //					главного окна
@@ -48,8 +48,8 @@ namespace config_window
 	/**
 	*	@brief Configuration constants for the SFML window
 	*/
-	constexpr unsigned int WINDOW_WIDTH = 768;		// window width
-	constexpr unsigned int WINDOW_HEIGHT = 576;		// window height
+	constexpr unsigned int WINDOW_WIDTH = 912;		// window width
+	constexpr unsigned int WINDOW_HEIGHT = 480;		// window height
 	constexpr const char* WINDOW_TITLE = "Ninotchka Hub";	// window title
 
 	/** 

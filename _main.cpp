@@ -109,26 +109,29 @@ int main()
     // 
     // ---------------------------
     //
-    sf::RectangleShape background(sf::Vector2f(288, 576));
-    background.setPosition(sf::Vector2f(0, 0));
-    background.setFillColor(sf::Color(23, 0, 29));
+    sf::Texture texture_background;
+    if (!texture_background.loadFromFile("gfx-assets/new-main-menu-design/calculator___image-background.png"));
+
+    sf::Sprite background(texture_background);
+    background.setPosition(sf::Vector2f(432, 27));
+    background.setScale(3.f, 3.f);
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     
 
 
 
-    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //  
     // @brief:      Инициализация текстуры
     // 
     // ---------------------------
     //
     sf::Texture texture_title;
-    if (!texture_title.loadFromFile("gfx-assets/_text-title-project-ninotchka-hub.png"));
+    if (!texture_title.loadFromFile("gfx-assets/new-main-menu-design/main-menu___text-title.png"));
 
     sf::Sprite title(texture_title);
-    title.setPosition(sf::Vector2f(420.f, 150.f));
+    title.setPosition(sf::Vector2f(390.f, 228.f));
     title.setScale(3.f, 3.f);
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -142,12 +145,12 @@ int main()
     // 
     // ---------------------------
     //
-    sf::Texture texture_ninotchka;
-    if (!texture_ninotchka.loadFromFile("gfx-assets/_first-version-ninotchka.png"));
+    sf::Texture texture_hand;
+    if (!texture_hand.loadFromFile("gfx-assets/new-main-menu-design/main-menu___image-hand.png"));
 
-    sf::Sprite ninotchka(texture_ninotchka);
-    ninotchka.setPosition(sf::Vector2f(40.f, 0.f));
-    ninotchka.setScale(3.f, 3.f);
+    sf::Sprite sprite_hand(texture_hand);
+    sprite_hand.setPosition(sf::Vector2f(384.f, 0.f));
+    sprite_hand.setScale(3.f, 3.f);
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
@@ -161,24 +164,26 @@ int main()
     // ---------------------------
     //
     ninotchka::user_interface::UIButton button_start_calculator(
-        sf::Vector2f(336.f, 48.f),
-        sf::Vector2f(420.f, 250.f),
-        "gfx-assets/_blueprint-button-calculator.png"
+        sf::Vector2f(240.f, 48.f),
+        sf::Vector2f(15.f, 384.f),
+        "gfx-assets/new-main-menu-design/main-menu___image-button-calculator.png"
     );
 
-    ninotchka::user_interface::UIButton button_start_ninotchka_sketch(
-        sf::Vector2f(336.f, 48.f),
-        sf::Vector2f(420.f, 300.f),
-        "gfx-assets/_blueprint-button-ninotchka-sketchpad.png"
+    ninotchka::user_interface::UIButton button_start_graphic_editor(
+        sf::Vector2f(240.f, 48.f),
+        sf::Vector2f(657.f, 384.f),
+        "gfx-assets/new-main-menu-design/main-menu___image-button-graphiceditor.png"
     );
 
     ninotchka::user_interface::UIButton button_start_game(
-        sf::Vector2f(336.f, 48.f),
-        sf::Vector2f(420.f, 350.f),
-        "gfx-assets/_blueprint-button-why-did-i-create-this.png"
+        sf::Vector2f(288.f, 48.f),
+        sf::Vector2f(312.f, 417.f),
+        "gfx-assets/new-main-menu-design/main-menu___image-button-whydidicreatethis.png"
     );
     //
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
 
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -204,24 +209,6 @@ int main()
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 
-    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-    //  
-    // @brief:      Инициализация текстуры разделения интерфейса калькулятора
-    // 
-    // ---------------------------
-    //
-    sf::Texture texture;
-    if (!texture.loadFromFile("gfx-assets/_line-for-calculator.png"))
-    {
-        return config_window::application_exit_code::WINDOW_ERROR;
-    }
-    
-    sf::Sprite line_for_calculator;
-    line_for_calculator.setTexture(texture);
-    line_for_calculator.setPosition(sf::Vector2f(15.f, 175.f));
-    line_for_calculator.setScale(3.f, 3.f);
-    //
-    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -231,117 +218,117 @@ int main()
     // ---------------------------
     //
     ninotchka::user_interface::UIButton button_calculator_0(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(83.f, 489.f),
-        "gfx-assets/_button-calculator-blueprint-0.png"
+        sf::Vector2f(123.f, 48.f),
+        sf::Vector2f(450.f, 375.f),
+        "gfx-assets/new-main-menu-design/calculator___button-0.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_1(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(20.f, 426.f),
-        "gfx-assets/_button-calculator-blueprint-1.png"
+        sf::Vector2f(54.f, 48.f),
+        sf::Vector2f(450.f, 312.f),
+        "gfx-assets/new-main-menu-design/calculator___button-1.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_2(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(83.f, 426.f),
-        "gfx-assets/_button-calculator-blueprint-2.png"
+        "gfx-assets/new-main-menu-design/calculator___button-2.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_3(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(146.f, 426.f),
-        "gfx-assets/_button-calculator-blueprint-3.png"
+        "gfx-assets/new-main-menu-design/calculator___button-3.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_4(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(20.f, 363.f),
-        "gfx-assets/_button-calculator-blueprint-4.png"
+        sf::Vector2f(54.f, 48.f),
+        sf::Vector2f(450.f, 249.f),
+        "gfx-assets/new-main-menu-design/calculator___button-4.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_5(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(83.f, 363.f),
-        "gfx-assets/_button-calculator-blueprint-5.png"
+        "gfx-assets/new-main-menu-design/calculator___button-5.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_6(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(146.f, 363.f),
-        "gfx-assets/_button-calculator-blueprint-6.png"
+        "gfx-assets/new-main-menu-design/calculator___button-6.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_7(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(20.f, 300.f),
-        "gfx-assets/_button-calculator-blueprint-7.png"
+        sf::Vector2f(54.f, 48.f),
+        sf::Vector2f(450.f, 186.f),
+        "gfx-assets/new-main-menu-design/calculator___button-7.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_8(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(83.f, 300.f),
-        "gfx-assets/_button-calculator-blueprint-8.png"
+        "gfx-assets/new-main-menu-design/calculator___button-8.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_9(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(146.f, 300.f),
-        "gfx-assets/_button-calculator-blueprint-9.png"
+        "gfx-assets/new-main-menu-design/calculator___button-9.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_menu(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(18.f, 495.f),
-        "gfx-assets/_button-calculator-blueprint-menu.png"
+        sf::Vector2f(192.f, 48.f),
+        sf::Vector2f(15.f, 15.f),
+        "gfx-assets/new-main-menu-design/calculator___button-backtomenu.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_comma(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(148.f, 495.f),
-        "gfx-assets/_button-calculator-blueprint-comma.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-comma.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_plus(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(211.f, 495.f),
-        "gfx-assets/_button-calculator-blueprint-plus.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-plus.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_minus(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(211.f, 432.f),
-        "gfx-assets/_button-calculator-blueprint-minus.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-minus.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_multiply(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(211.f, 369.f),
-        "gfx-assets/_button-calculator-blueprint-multiply.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-multiply.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_subdivision(
-        sf::Vector2f(48.f, 48.f),
+        sf::Vector2f(54.f, 48.f),
         sf::Vector2f(211.f, 306.f),
-        "gfx-assets/_button-calculator-blueprint-subdivision.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-subdivision.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_equal(
         sf::Vector2f(48.f, 48.f),
         sf::Vector2f(49.f, 237.f),
-        "gfx-assets/_button-calculator-blueprint-equal.png"
+        "gfx-assets/old-main-menu-design/_button-calculator-blueprint-equal.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_clear(
-        sf::Vector2f(48.f, 48.f),
-        sf::Vector2f(112.f, 237.f),
-        "gfx-assets/_button-calculator-blueprint-clear.png"
+        sf::Vector2f(54.f, 48.f),
+        sf::Vector2f(450.f, 123.f),
+        "gfx-assets/new-main-menu-design/calculator___button-clear.png"
     );
 
     ninotchka::user_interface::UIButton button_calculator_back(
-        sf::Vector2f(84.f, 48.f),
-        sf::Vector2f(175.f, 237.f),
-        "gfx-assets/_button-calculator-blueprint-back.png"
+        sf::Vector2f(54.f, 48.f),
+        sf::Vector2f(185.f, 384.f),
+        "gfx-assets/new-main-menu-design/calculator___button-back.png"
     );
     // 
     // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -384,7 +371,7 @@ int main()
             {
                 isOpenWindowTest = !isOpenWindowTest;
             }
-            if (button_start_ninotchka_sketch.isLClicked(window, event))
+            if (button_start_graphic_editor.isLClicked(window, event))
             {
                 std::cout << "2" << std::endl;
             }
@@ -404,75 +391,78 @@ int main()
             // 
             // ---------------------------
             //
-            if (button_calculator_0.isLClicked(window, event)) {
-                inputString += "0";
-            }
-            if (button_calculator_1.isLClicked(window, event)) {
-                inputString += "1";
-            }
-            if (button_calculator_2.isLClicked(window, event)) {
-                inputString += "2";
-            }
-            if (button_calculator_3.isLClicked(window, event)) {
-                inputString += "3";
-            }
-            if (button_calculator_4.isLClicked(window, event)) {
-                inputString += "4";
-            }
-            if (button_calculator_5.isLClicked(window, event)) {
-                inputString += "5";
-            }
-            if (button_calculator_6.isLClicked(window, event)) {
-                inputString += "6";
-            }
-            if (button_calculator_7.isLClicked(window, event)) {
-                inputString += "7";
-            }
-            if (button_calculator_8.isLClicked(window, event)) {
-                inputString += "8";
-            }
-            if (button_calculator_9.isLClicked(window, event)) {
-                inputString += "9";
-            }
-            if (button_calculator_comma.isLClicked(window, event)) {
-                inputString += ".";
-            }
-            if (button_calculator_plus.isLClicked(window, event)) {
-                inputString += "+";
-            }
-            if (button_calculator_minus.isLClicked(window, event)) {
-                inputString += "-";
-            }
-            if (button_calculator_multiply.isLClicked(window, event)) {
-                inputString += "*";
-            }
-            if (button_calculator_subdivision.isLClicked(window, event)) {
-                inputString += "/";
-            }
-            if (button_calculator_equal.isLClicked(window, event)) {
-                try {
-                    double result = calculateResult(inputString);
-                    inputString = std::to_string(result);
+            if (isOpenWindowTest)
+            {
+                if (button_calculator_0.isLClicked(window, event)) {
+                    inputString += "0";
+                }
+                if (button_calculator_1.isLClicked(window, event)) {
+                    inputString += "1";
+                }
+                if (button_calculator_2.isLClicked(window, event)) {
+                    inputString += "2";
+                }
+                if (button_calculator_3.isLClicked(window, event)) {
+                    inputString += "3";
+                }
+                if (button_calculator_4.isLClicked(window, event)) {
+                    inputString += "4";
+                }
+                if (button_calculator_5.isLClicked(window, event)) {
+                    inputString += "5";
+                }
+                if (button_calculator_6.isLClicked(window, event)) {
+                    inputString += "6";
+                }
+                if (button_calculator_7.isLClicked(window, event)) {
+                    inputString += "7";
+                }
+                if (button_calculator_8.isLClicked(window, event)) {
+                    inputString += "8";
+                }
+                if (button_calculator_9.isLClicked(window, event)) {
+                    inputString += "9";
+                }
+                if (button_calculator_comma.isLClicked(window, event)) {
+                    inputString += ".";
+                }
+                if (button_calculator_plus.isLClicked(window, event)) {
+                    inputString += "+";
+                }
+                if (button_calculator_minus.isLClicked(window, event)) {
+                    inputString += "-";
+                }
+                if (button_calculator_multiply.isLClicked(window, event)) {
+                    inputString += "*";
+                }
+                if (button_calculator_subdivision.isLClicked(window, event)) {
+                    inputString += "/";
+                }
+                if (button_calculator_equal.isLClicked(window, event)) {
+                    try {
+                        double result = calculateResult(inputString);
+                        inputString = std::to_string(result);
 
-                    inputString.erase(inputString.find_last_not_of('0') + 1, std::string::npos);
-                    if (inputString.back() == '.') {
-                        inputString.pop_back();
+                        inputString.erase(inputString.find_last_not_of('0') + 1, std::string::npos);
+                        if (inputString.back() == '.') {
+                            inputString.pop_back();
+                        }
+                    }
+                    catch (const std::exception& e) {
+                        inputString = "Error";
                     }
                 }
-                catch (const std::exception& e) {
-                    inputString = "Error";
+                if (button_calculator_clear.isLClicked(window, event)) {
+                    inputString.clear();
                 }
-            }
-            if (button_calculator_clear.isLClicked(window, event)) {
-                inputString.clear();
-            }
-            if (button_calculator_back.isLClicked(window, event)) {
-                if (!inputString.empty()) {
-                    inputString.pop_back(); // Удаляем последний символ
+                if (button_calculator_back.isLClicked(window, event)) {
+                    if (!inputString.empty()) {
+                        inputString.pop_back(); // Удаляем последний символ
+                    }
                 }
-            }
-            if (button_calculator_menu.isLClicked(window, event)) {
-                isOpenWindowTest = !isOpenWindowTest;
+                if (button_calculator_menu.isLClicked(window, event)) {
+                    isOpenWindowTest = !isOpenWindowTest;
+                }
             }
             //
             // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -484,12 +474,12 @@ int main()
         {
             displayText.setString(inputString);
 
-            window.clear(sf::Color(39, 0, 34));
+            window.clear(sf::Color::Black);
 
-            window.draw(background);
             window.draw(displayText);
-            window.draw(line_for_calculator);
-            button_calculator_0.draw(window);
+            window.draw(background);
+          
+            button_calculator_0.draw(window);  
             button_calculator_1.draw(window);
             button_calculator_2.draw(window);
             button_calculator_3.draw(window);
@@ -513,16 +503,14 @@ int main()
         }
         else
         {
-            window.clear(sf::Color(39, 0, 34));
+            window.clear(sf::Color::Black);
 
-            window.draw(background);
-            window.draw(ninotchka);
+            window.draw(sprite_hand);
+            window.draw(title);
 
             button_start_calculator.draw(window);
-            button_start_ninotchka_sketch.draw(window);
+            button_start_graphic_editor.draw(window);
             button_start_game.draw(window);
-
-            window.draw(title);
 
             window.display();
         }
