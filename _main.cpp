@@ -318,7 +318,7 @@ int main()
         sf::Vector2f(49.f, 237.f),
         "gfx-assets/old-main-menu-design/_button-calculator-blueprint-equal.png"
     );
-
+        
     ninotchka::user_interface::UIButton button_calculator_clear(
         sf::Vector2f(54.f, 48.f),
         sf::Vector2f(450.f, 123.f),
@@ -520,12 +520,6 @@ int main()
 
     return config_window::application_exit_code::WINDOW_COMPLETE;   // Пока :D https://www.youtube.com/watch?v=6EXB2Of1zLY
 }
-////////////////////////////////////////////////////////////////////
-/// ��� ����� ���:
-///     1. DVRST, polnalyubvi - Falling Stars (Lyrics video):   https://youtu.be/r-z3mVtXa-Q
-///     2. DVRST, Leah Julia - Across The Sky (Lyrics Video):   https://youtu.be/UJQZNJr7Ppg
-///     3. ����������, ����� - Baby mama[Official Audio]:       https://youtu.be/eXLSBdxm_cs
-////////////////////////////////////////////////////////////////////
 
 
 
@@ -617,3 +611,190 @@ std::cout << "Content-Type header:" << response.getField("Content-Type") << std:
 std::cout << "body: " << response.getBody() << std::endl;
 */
 ////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+/*
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+//
+// @brief:      Библиотеки и точка входа
+//
+// ---------------------------
+
+#include <SFML/Graphics.hpp>
+
+int main()
+{
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    // @brief:      Инициализация параметров
+    //
+    // ---------------------------
+
+    unsigned int pixels_w = 24;
+    unsigned int pixels_h = 24;
+
+    uint8_t cr = 255;
+    uint8_t cg = 255;
+    uint8_t cb = 255;
+
+    unsigned int pixels_n = pixels_w * pixels_h * 4;
+
+    uint8_t pixels[pixels_n];
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    // @brief:      Создание графических объектов
+    //
+    // ---------------------------
+
+    sf::RenderWindow window(sf::VideoMode({600, 600}), "Title");
+
+    sf::Texture texture({pixels_w, pixels_h});
+    sf::Sprite  sprite(texture);
+    float scale = window.getSize().x / pixels_w;
+    sprite.setScale({scale, scale});
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    // @brief:      Лямбда-функции для работы с пикселями
+    //
+    // ---------------------------
+
+    auto SetPixel = [&] (uint8_t r, uint8_t g, uint8_t b, uint8_t a = 255)
+    {
+        sf::Vector2i mouse_position = sf::Mouse::getPosition(window);
+
+        unsigned int x = mouse_position.x / scale;
+        unsigned int y = mouse_position.y / scale;
+
+        unsigned int ir = (pixels_w*y + x) * 4;
+        unsigned int ig = ir + 1;
+        unsigned int ib = ig + 1;
+        unsigned int ia = ib + 1;
+
+        if (ia < pixels_n and
+            (pixels[ir] != r or pixels[ig] != g or pixels[ib] != b or pixels[ia] != a))
+        {
+            pixels[ir] = r;
+            pixels[ig] = g;
+            pixels[ib] = b;
+            pixels[ia] = a;
+
+            texture.update(pixels);
+        }
+    };
+
+    auto ClearPixels = [&] ()
+    {
+        for (unsigned int i = 0;  i < pixels_n;  i++)
+            pixels[i] = 0;
+
+        texture.update(pixels);
+    };
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    // @brief:      Инициализация состояния
+    //
+    // ---------------------------
+
+    ClearPixels();
+
+    // -----------------------------------------------------
+    //
+    // @brief:          Главный цикл
+    //
+    // ---------------------------
+    // @description:    Главный цикл обработки событий
+    //                  отрисовки интерфейса и обработки
+    //                  ввода данных в окне.
+    //
+    // -----------------------------------------------------
+
+    while (window.isOpen())
+    {
+        // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        //
+        // @brief:      Обработка событий окна
+        //
+        // ---------------------------
+
+        while (auto event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+            {
+                window.close();
+            }
+
+            else if (auto resized = event->getIf<sf::Event::Resized>())
+            {
+                window.setView(sf::View(sf::FloatRect({0.f, 0.f}, sf::Vector2f(resized->size))));
+            }
+
+            // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+            //
+            // @brief:      Обработка клавиатуры
+            //
+            // ---------------------------
+
+            else if (auto key = event->getIf<sf::Event::KeyReleased>())
+            {
+                if      (key->scancode == sf::Keyboard::Scan::Num1) {cr = 255; cg = 255; cb = 255;}
+                else if (key->scancode == sf::Keyboard::Scan::Num2) {cr =   0; cg =   0; cb =   0;}
+                else if (key->scancode == sf::Keyboard::Scan::Num3) {cr =   0; cg = 170; cb = 255;}
+                else if (key->scancode == sf::Keyboard::Scan::Num4) {cr =   0; cg = 255; cb = 255;}
+                else if (key->scancode == sf::Keyboard::Scan::Num5) {cr = 255; cg = 223; cb = 191;}
+
+                else if (key->scancode == sf::Keyboard::Scan::Escape)
+                    ClearPixels();
+
+                else if (key->scancode == sf::Keyboard::Scan::S and key->control)
+                    bool success = texture.copyToImage().saveToFile("Draw.png");
+            }
+        }
+
+        // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        //
+        // @brief:      Обработка мыши
+        //
+        // ---------------------------
+
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+        {
+            SetPixel(cr, cg, cb);
+        }
+
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+        {
+            SetPixel(0, 0, 0, 0);
+        }
+
+        // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        //
+        // @brief:      Отрисовка кадра
+        //
+        // ---------------------------
+
+        window.clear(sf::Color(64, 64, 64));
+
+        window.draw(sprite);
+
+        window.display();
+    }
+
+    // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    //
+    // @brief:      Завершение программы
+    //
+    // ---------------------------
+
+    return 0;
+}
+*/
